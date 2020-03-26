@@ -13,7 +13,7 @@ Firstly you need to store the public SSH key on the server that you wish to conn
 1. Copy the contents of your SSH public key file
 2. Paste the contents into the file ~/.ssh/authorized_keys (if either the directory or file don't exist, then create them)
 3. Change the folder and file permissions ```sudo chmod -R go= ~/.ssh```
-4. Change the foler and file user/group ```sudo chown -R testspecimen:testspecimen ~/.ssh```
+4. Change the folder and file user/group ```sudo chown -R testspecimen:testspecimen ~/.ssh```
 
 ### Connect from local computer to server
 
