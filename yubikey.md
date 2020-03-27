@@ -13,7 +13,7 @@ Firstly you need to store the public SSH key on the server that you wish to conn
 1. Copy the contents of your SSH public key file
 2. Paste the contents into the file ~/.ssh/authorized_keys (if either the directory or file don't exist, then create them)
 3. Change the folder permission ```sudo find ~/.ssh -type d -exec sudo chmod 700 {} \;``` (folders have only read / write / execute for the folders)
-4. Change file permissions ```sudo find ~/.ssh -type d -exec sudo chmod 600 {} \;``` (files have only read / write for the user)
+4. Change file permissions ```sudo find ~/.ssh -type f -exec sudo chmod 600 {} \;``` (files have only read / write for the user)
 5. Change the folder and file user/group ```sudo chown -R testspecimen:testspecimen``` (where it says "testspecimen" replace with your username)
 
 ### Connect from local computer to server
