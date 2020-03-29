@@ -1,8 +1,8 @@
 # Linux Notes
 
-This repository is intended to be for logging useful information mainly in relation to the administration of a Fedora workstation and an Ubuntu web server.
+This repository is intended to be for logging useful information, mainly in relation to the administration of a Fedora workstation and an Ubuntu web server.
 
-Should you find the information provided here useful, please feel free to use it as your own own reference.
+Should you find the information provided here useful, please feel free to use it as your own reference.
 
 ## Current distribution versions
 
