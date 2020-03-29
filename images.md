@@ -60,10 +60,10 @@ The first part:
 
 Specifies to find, within the current folder, all files with extension "tif". It also specifies the use of the methods "parallel" and "mogrify", which will carry out the conversion.
 
-Quality: specifies the compression aggressiveness from 0 to 100
-Filter: when resizing a picture an algorithm needs to be used to reduce the amount of pixels. There are various methods available, but I have chosen the Lanczos method.
-Resize: this tells Imagemagick what size the final image should be. Specifically "720x720^" means the smallest side of the image will be 720 pixels long
-Format: This specifies the output format and can be whatever is necessary
+-Quality: specifies the compression aggressiveness from 0 to 100
+-Filter: when resizing a picture an algorithm needs to be used to reduce the amount of pixels. There are various methods available, but I have chosen the Lanczos method.
+-Resize: this tells Imagemagick what size the final image should be. Specifically "720x720^" means the smallest side of the image will be 720 pixels long
+-Format: This specifies the output format and can be whatever is necessary
 
 The remaining options that you see for WebP are specific to that particular file format. Depending on the file format output there may be other options available.
 Please check the documentation on the ImageMagick website for further details.
