@@ -5,11 +5,28 @@ It is often required to compress and resize images.
 With the use of ImageMagick this can be done via the commandline in batches.
 
 ImageMagick: performs all image manipulation
+
 parallel: allows faster batch processing by running jobs in parallel
 
 ## Install
 
 	sudo dnf install ImageMagick parallel
+
+## WARNING
+
+**The mogrify command is destructive.** For example if you run the following command inside a folder full of JPG images it will overwrite the originals!
+
+	find . -type f | egrep "*.jpg" | parallel mogrify -quality 100 -filter Lanczos -resize 640x640^ -format jpg {/}
+
+You would lose the original full size images forever as they are overwritten with 640x640 smaller images!
+
+**BE VERY CARFEFUL, YOU HAVE BEEN WARNED**
+
+However, this is no problem:
+
+	find . -type f | egrep "*.png" | parallel mogrify -quality 100 -filter Lanczos -resize 640x640^ -format jpg {/}
+
+This is because it converts from png to jpg (i.e. the file endings are different), so the originals will not get touched.
 
 ## Conversion examples
 
@@ -50,22 +67,6 @@ Format: This specifies the output format and can be whatever is necessary
 
 The remaining options that you see for WebP are specific to that particular file format. Depending on the file format output there may be other options available.
 Please check the documentation on the ImageMagick website for further details.
-
-## WARNING
-
-**The mogrify command is destructive.** For example if you run the following command inside a folder full of JPG images it will overwrite the originals!
-
-	find . -type f | egrep "*.jpg" | parallel mogrify -quality 100 -filter Lanczos -resize 640x640^ -format jpg {/}
-
-You would lose the original full size images forever as they are overwritten with 640x640 smaller images!
-
-**BE VERY CARFEFUL, YOU HAVE BEEN WARNED**
-
-However, this is no problem:
-
-	find . -type f | egrep "*.png" | parallel mogrify -quality 100 -filter Lanczos -resize 640x640^ -format jpg {/}
-
-This is because it converts from png to jpg (i.e. the file endings are different), so the originals will not get touched.
 
 ## ImageMagick Source
 
