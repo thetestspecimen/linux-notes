@@ -11,6 +11,10 @@ These are the current versions of operating system this repository is relevant t
 - Fedora Workstation 31
 - Ubuntu Server 19.10
 
+## Contributions
+
+If you spot anything that I have written is wrong, or could be done better then please don't hesitate to get in contact or put in a pull request.
+
 ## License
 
 The content of this project is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International license](LICENSE.md)
