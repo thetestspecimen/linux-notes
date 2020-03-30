@@ -112,6 +112,10 @@ Go to the main folder where you want the repository cloned
 	git push -u origin --all
 	git push -u origin --tags
 
+## Update a local repository from remote
+
+	git pull origin master
+
 ## Signed commits
 
 If you wish to sign a commit then you need to use the -S (Note: the "S" is capitalised!)
