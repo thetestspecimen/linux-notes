@@ -31,13 +31,30 @@ For example Filezilla should always be started from the commandline **after** ru
 In order to swap between which YubiKey I want to use, I do the following:
 
 	sudo killall gpg-agent
-	sudo rm -r ~/.gnupg/private-keys-v1.d/
+
+You then need to delete the previous keys. The keys are stored in the following folder: 
+
+	~/.gnupg/private-keys-v1.d/
+
+If you only have one set of private keys then you can just delete all the contents of the above folder, which will
+likely be three files ending in ".key" (there are three as there is one for signing, encryption and authentication)
+	
+However, if you have other keys you do not want to delete, you need to find the correct keys to delete. 
+
+The file names of the ".key" files are the "keygrip", so you need to list the key information with the keygrip:
+
+	gpg --list-secret-keys --with-keygrip
+
+You then pick the corresponding keygrips for the keys you want to delete, and delete the key files.
 
 Now plug in the new YubiKey
 
 	gpg --card-edit
 
-This makes sure the card is visible and working. It also notifies gpg which keys are available for current card.
+This makes sure the card is visible and working. It also notifies gpg which keys are available for current card, and will add ".key"
+files to the following folder:
+
+	~/.gnupg/private-keys-v1.d/
 
 Now the alternate card should be usable. If it's not, unplug the YubiKey and repeat the steps above, it should work the second time.
 
