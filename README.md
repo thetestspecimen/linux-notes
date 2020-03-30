@@ -13,7 +13,7 @@ These are the current versions of operating system this repository is relevant t
 
 ## Contributions
 
-If you spot anything that I have written is wrong, or could be done better then please don't hesitate to get in contact or put in a pull request.
+If you spot anything that I have written is wrong, or could be done better, then please don't hesitate to get in contact or put in a pull request.
 
 ## License
 
