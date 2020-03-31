@@ -39,6 +39,10 @@ Please see the list below for the topics available:
 5. [Image Manipulation](images.md) - batch image conversion and resizing
 	- batch image format conversion 
 	- batch image resizing
+6. [Reference Websites](websites.md) - websites used to create this repo
+	- command list
+	- sign other people gpg keys
+	- change luks encryption password
 
 ## Contributions
 

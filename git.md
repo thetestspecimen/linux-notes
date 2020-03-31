@@ -41,7 +41,7 @@ If you want to sign your commits or tags with you gpg key then you will need
 to tell git which key to use, and you also have the option of specifying it's 
 use on every commit.
 
-	git config --global user.signingkey C56895C596A65895
+	git config --global user.signingkey C88001C355A25170
 	git config --global commit.gpgsign true
 
 Please change the key above to your own.
