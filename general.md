@@ -51,3 +51,27 @@ View an output of all the sensors:
 View a live stream of the output of all the sensors:
 
 	watch sensors
+
+## Change LUKS drive encryption password
+
+LUKS encryption is used to encrypt disk drives in Linux, and you may want to change the
+password.
+
+### Getting the drive name
+
+To update the password on the drive the first thing you need is the drive name
+
+The easiest way to do this is to run:
+
+	lsblk
+
+This will list a tree structure of the drives. The drive you need will have "luks" somewhere
+in it's tree
+
+### Change a single password
+
+If your drive only has one password it is easy to change. Just use the following command:
+
+	sudo cryptsetup luksChangeKey /dev/sdX
+
+where the "sdX" is replaced with your actual drive name.

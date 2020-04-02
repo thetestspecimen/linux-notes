@@ -43,6 +43,7 @@ Please see the list below for the topics available:
 	- command list
 	- sign other people gpg keys
 	- change luks encryption password
+7. [Deep Learning](deeplearning.md) - Setup deep learning with Fedora and AMD GPU
 
 ## Contributions
 
