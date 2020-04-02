@@ -24,17 +24,16 @@ If you happen to run Ubuntu, CentOS, RHEL or SLES you can take a look at [ROCm](
 ## Recommendations
 
 You may note that my GPU is certainly not top of the line, but the fact is it is a **lot** better than using a CPU
-for the same task. This is something worth bearing in mind.
-
-...so even though it was a hassle to find out how to make the GPU work, it was definitely worth it.
+for the same task. This is something worth bearing in mind. So even though it was a hassle to find out how to make 
+the GPU work, it was definitely worth it.
 
 I have run a simple test to hammer home the point:
 
-I have a an i7 4790k overclocked to 4.6Ghz (this is an older processor with 4 physical cores (8 threads), but it is far from slow).
+I have a an i7 4790k overclocked to 4.6Ghz (this is an older processor with 4 physical cores (8 threads), but it is far from slow). I ran the same test of 
+12 epochs on both the CPU and the GPU. Here are the times in seconds for each epoch:
 
-Using a specific test case with 12 epochs, each epoch takes approx 46s to complete.
-
-With my RX560 each epoch takes around 16s to complete.
+- CPU: 46 seconds
+- GPU: 16 seconds
 
 So with the GPU it takes a third of the time, and it isn't even a good GPU! Imagine what your RX Vega or RX 5000 series could manage (or multiples of them).
 
@@ -109,6 +108,8 @@ Once you are in the new environment, you can install the packages you need:
 
 Plaidml is what will allow the use of an AMD GPU
 
+Within your conda virtual environment:
+
 	pip install plaidml-keras plaidbench
 
 Then we run the setup:
@@ -117,7 +118,11 @@ Then we run the setup:
 
 Below is what appears when you run the setup.
 
-There are three questions to answer which I have made bold:
+There are three questions to answer in the text below:
+
+- Enable experimental device support? (y,n)[n]:y
+- Default device? (1,2)[1]:2 **(this may vary for you, depending on the devices in your computer. Select the number that represents your GPU)**
+- Save settings to /home/testspecimen/.plaidml? (y,n)[y]:y
 
 ```
 PlaidML Setup (0.7.0)
@@ -149,7 +154,7 @@ Experimental Config Devices:
 
 Using experimental devices can cause poor performance, crashes, and other nastiness.
 
-**Enable experimental device support? (y,n)[n]:y**
+Enable experimental device support? (y,n)[n]:y
 
 Multiple devices detected (You can override by setting PLAIDML_DEVICE_IDS).
 Please choose a default device:
@@ -157,7 +162,7 @@ Please choose a default device:
    1 : llvm_cpu.0
    2 : opencl_amd_baffin.0
 
-**Default device? (1,2)[1]:2**
+Default device? (1,2)[1]:2
 
 Selected device:
     opencl_amd_baffin.0
@@ -167,7 +172,7 @@ Tile code:
   function (B[X,Z], C[Z,Y]) -> (A) { A[x,y : X,Y] = +(B[x,z] * C[z,y]); }
 Whew. That worked.
 
-**Save settings to /home/testspecimen/.plaidml? (y,n)[y]:y**
+Save settings to /home/testspecimen/.plaidml? (y,n)[y]:y
 Success!
 ```
 The final thing to do to make sure it uses the GPU is to include the following lines
