@@ -66,7 +66,7 @@ The favicon is fairly standard and can be generated using numerous websites. For
 
 ### Main logo
 
-The main logo should preferably be in svg format. This is mainly due to the fact that it is scalable, as implied in the name (**S**calable **V**ector **G**raphics.
+The main logo should preferably be in svg format. This is mainly due to the fact that it is scalable, as implied in the name (**S**calable **V**ector **G**raphics).
 It is also the format used by the 'elastic' skin by default.
 
 Again there are various ways to go about converting png or jpg to svg. Just have a look what is available.
