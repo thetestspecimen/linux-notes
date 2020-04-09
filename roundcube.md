@@ -15,12 +15,12 @@ The important things for me are:
 - **Roundcube version > 1.4**
 - **Base skin: Elastic (i.e. not larry or classic)**
 
-You may want to update the standard logos that roundmail uses to match your website.
+You may want to update the standard logos that roundmail uses so they match your website.
 
-Although this is possible, it is not particularly well documented, and I ran into a lot of problems trying to get it to work
-without just cloning the whole of one of the skins.
+Although this is possible, it is not particularly well documented, and I ran into a lot of problems trying to get it to work,
+without just cloning all the files contained in a base skin.
 
-(Note: Blanket cloning one of the skins will work but you will miss out on any changes to the base skin in subsequent updates, or
+(Note: Blanket cloning one of the skins will work, but you will miss out on any changes to the base skin in subsequent updates, or
 have to do the same work again on every update!)
 
 ## Basic information
@@ -55,7 +55,7 @@ You will need the following files:
 - custom-favicon.ico
 - custom-logo.svg
 
-I would recommend that your logo is close to haveing the same height and width dimensions, it doesn't need to be **precise**, 
+I would recommend that your logo is close to having the same height and width dimensions, it doesn't need to be **precise**, 
 but the further away from this you are the more the end result will be scaled. 
 
 ### Favicon
@@ -66,7 +66,7 @@ The favicon is fairly standard and can be generated using numerous websites. For
 
 ### Main logo
 
-The main logo should preferably be in svg format. This is mainly due to the fact that it is scalable, as implied in the name.
+The main logo should preferably be in svg format. This is mainly due to the fact that it is scalable, as implied in the name (**S**calable **V**ector **G**raphics.
 It is also the format used by the 'elastic' skin by default.
 
 Again there are various ways to go about converting png or jpg to svg. Just have a look what is available.
@@ -97,7 +97,7 @@ Move back into the newskin folder and create the following files:
 - meta.json
 - watermark.html
 
-Open 'meta.json', and enter the following text:
+Open 'meta.json', and enter the following text (substitute the "newskin" for your skin name):
 
 ```json
 {
@@ -146,7 +146,7 @@ Save the file, and open 'watermark.html'. Paste the following text:
 
 Save the file.
 
-## Create config file
+## Create the skins config file
 
 We now need to create a configuration file for the new skin.
 
@@ -162,7 +162,7 @@ $config['support_url'] = 'mailto:info@mywebsite.com';
 // Name your service. This is displayed on the login screen and in the window title
 $config['product_name'] = 'My Website Webmail';
 
-// $config['skin_logo'] = array("*" => "/images/mylogo.svg", "messageprint" => "/images/mylogo.svg", "elastic:*" => "/images/mylogo.svg");
+// Logo and skin names and locations
 $config['skin_logo'] = array("*" => "/images/custom-logo.svg");
 $config['skin'] = 'newskin';
 ```
@@ -174,7 +174,8 @@ The above will allow the use of the new logos, as well as allowing you to change
 
 ## Update the main config file
 
-We now need to tell roundcube where to find the config file, so we reference it in the main config file 'config.inc.php':
+We now need to tell roundcube where to find the config file, so we reference it in the main config file 'config.inc.php',
+which is also in the 'config' folder:
 
 ```php
 $config['include_host_config'] = array(
