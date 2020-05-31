@@ -8,8 +8,8 @@ Should you find the information provided here useful, please feel free to use it
 
 These are the current versions of operating system this repository is relevant to:
 
-- Fedora Workstation 31
-- Ubuntu Server 19.10
+- Fedora Workstation 32
+- Ubuntu Server 20.04
 
 ## Index
 
