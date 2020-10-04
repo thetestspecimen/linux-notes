@@ -73,6 +73,23 @@ One last thing. It may be worth updating, so run this in a terminal:
 
 	conda update conda
 
+## Install OpenCL (Optional)
+
+If you already have OpenCL installed for your graphics card you can skip this step. To check whether you have do the following:
+
+	sudo dnf install clinfo
+	clinfo
+
+If you see the output:
+
+	Number of platforms                               0
+
+Then you do not have the necessary OpenCL modules installed and should install the following:
+
+	sudo dnf install mesa-libOpenCL
+
+This will install all the necessary packages for you to use your graphics card with plaid-ml
+
 ## Making a virtual environment
 
 Open a terminal:
