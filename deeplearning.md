@@ -102,8 +102,7 @@ Check it has been created by listing all environments:
 
 Activate that environment:
 
-	conda activate
-	source activate new-environment-name
+	conda activate new-environment-name
 
 ## Installing packages
 
