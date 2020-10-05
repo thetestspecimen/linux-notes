@@ -8,7 +8,7 @@ Hardware:
 
 Software:
 
-- Fedora 31
+- Fedora 32
 - Anaconda
 - TensorFlow
 - Keras
