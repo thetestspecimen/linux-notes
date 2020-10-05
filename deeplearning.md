@@ -75,7 +75,7 @@ One last thing. It may be worth updating, so run this in a terminal:
 
 ## Install OpenCL (Optional)
 
-If you already have OpenCL installed for your graphics card you can skip this step. To check whether you have do the following:
+If you already have OpenCL installed for your graphics card you can skip this step. To check whether you have, do the following:
 
 	sudo dnf install clinfo
 	clinfo
@@ -93,9 +93,7 @@ This will install all the necessary packages for you to use your graphics card w
 ## Install amdgpu-pro drivers for OpenCL
 
 These are card drivers directly from AMD. It is possible that the OpenCL drivers included with Fedora will
-not allow you to utilise plaidml later in this setup routine.
-
-If this is the case, the best solution is to use the ammdgpu-pro drivers. 
+not allow you to utilise plaidml later in this setup routine, so you may need the amdgpu-pro drivers. 
 
 Unfortunately, there is no easy option for Fedora, so it becomes a bit of a hack.
 
@@ -110,13 +108,13 @@ Go to [this](https://www.amd.com/en/support) webpage and go through the process 
 
 ### Extract the drivers
 
-Now extract the drivers to the `/var/local` folder.
+Now extract the drivers to the `/var/local` folder into a new folder called "amdgpu".
 
 ```
 tar xf /path/to/amdgpu-pro-xx-xx-xxxxxx-rhel-x.tar.xz
 sudo mv amdgpu-pro-xx-xx-xxxxxx-rhel-x /var/local/amdgpu
 ```
-### Create local repo file
+### Create a local repo file
 
 Create a local repo file at `/etc/yum.repos.d/amdgpu.repo` containing the following:
 
@@ -140,7 +138,7 @@ If you have a VEGA card or newer:
 
 	sudo dnf install libdrm-amdgpu libdrm-amdgpu-common clinfo-amdgpu-pro opencl-amdgpu-pro-comgr amdgpu-pro-core opencl-amdgpu-pro-icd libopencl-amdgpu-pro
 
-In both cases the `amdgpu-core` dependency will fail to install, but it is not needed so it doesn't matter.
+In both cases the `amdgpu-core` dependency will fail to install, but it is not needed, so it doesn't matter.
 
 ### Disable mesa runtime
 
@@ -150,8 +148,8 @@ If you have the Mesa runtime for OpenCL installed just rename it:
 
 ### Future upgrading
 
-As the rpm files are locally stored they will not update automatically, so if you want to update the files you will need to download the new drivers from the 
-website and replace those stored in ```/var/local/amdgpu``` with the new ones.
+As the rpm files are locally stored, they will not update automatically. If you want to update the files, you will need to download the new drivers from the 
+website. Replace those stored in ```/var/local/amdgpu``` with the new ones.
 
 Then run a normal upgrade in Fedora.
 
