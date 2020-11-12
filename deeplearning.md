@@ -73,23 +73,6 @@ One last thing. It may be worth updating, so run this in a terminal:
 
 	conda update conda
 
-## Install OpenCL (Optional)
-
-If you already have OpenCL installed for your graphics card you can skip this step. To check whether you have, do the following:
-
-	sudo dnf install clinfo
-	clinfo
-
-If you see the output:
-
-	Number of platforms                               0
-
-Then you do not have the necessary OpenCL modules installed and should install the following:
-
-	sudo dnf install mesa-libOpenCL
-
-This will install all the necessary packages for you to use your graphics card with plaid-ml
-
 ## Install amdgpu-pro drivers for OpenCL
 
 These are card drivers directly from AMD. It is possible that the OpenCL drivers included with Fedora will
@@ -254,6 +237,9 @@ Whew. That worked.
 Save settings to /home/testspecimen/.plaidml? (y,n)[y]:y
 Success!
 ```
+
+This will install all the necessary packages for you to use your graphics card with plaid-ml
+
 The final thing to do to make sure it uses the GPU is to include the following lines
 in your python file that contains your actual code:
 
@@ -263,4 +249,35 @@ plaidml.keras.install_backend()
 ```
 
 That's it!
+
+## Potential Problems
+
+It is possible that during the ```plaidml-setup``` you will not have an option of using the graphics card (i.e. you won't see ```opencl_amd_baffin.0```
+as per the text above).
+
+If that is the case there are a few items to check. Firstly, check if the operating system sees the graphics card:
+
+	sudo dnf install clinfo
+	clinfo
+
+If you see the output:
+
+	Number of platforms                               0
+
+Then you do not have the necessary OpenCL modules installed, and have probably messed up the graphics driver install. Try it again.
+
+If it is not that, I have also encountered a problem with plaid-ml failing to find ```libOpenCL.so```. This is genrally due
+to the file it wants to find being named slightly differently. 
+
+For example in my case the main file was called ```libOpenCL.so.1.1.0```, and there was a symbolic link with name 
+```libOpenCL.so.1```, neither of which are what plaid-ml was looking for.
+
+The solution is to create a symbolic link with the correct name. In my case the file is located in ```/usr/lib64/```, this may differ for you, but
+wherever the file lives create a symbolic link as follows:
+
+	sudo ln -s /usr/lib64/libOpenCL.so.1.0.0 /usr/lib64/libOpenCL.so 
+
+You should now be able to run ```plaidml-setup``` again, and the graphics card will be available as per the above.
+
+
 
