@@ -37,7 +37,7 @@ Now open a terminal, plug in the yubikey, and run:
 
 This will create the .gnupg folder in your home directory and fetch the keys from the card.
 
-It is possible the above will fail, which I am currently seeing with a new Fedora 33 install. If that is the case I have found that it
+It is possible the above will fail, which I am currently seeing with a new Fedora 33 install. I have found that it
 is some sort of conflict with pcscd. A restart seems to sort it out:
 
 	sudo service pcscd restart
@@ -84,7 +84,7 @@ The connection is now very simple:
 
 You may see something like the following the first time you connect:
 
-	The authenticity of host 'yourwebsite.com (214.66.230.184)' can't be established.
+	The authenticity of host 'website.com (214.66.230.184)' can't be established.
 	ECDSA key fingerprint is SHA256:fKLT/itf3P/CkFWgt7SbpyKVNhhmc/5LL2H6+zBpgDJ.
 	Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
