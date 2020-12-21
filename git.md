@@ -89,7 +89,7 @@ order as the previous command. Your key is the letters and numbers after "rsa409
 >Please note that as of 1st October 2020 GitHub started using 'main' instead
 >of 'master' as the primary/default branch name. I have therefore followed this
 >convention below. However, if you want to use 'master' just replace 'main' with
->'master' in what follows
+>'master' in what follows.
 
 Go to the main folder where you want the repository cloned
 
@@ -102,9 +102,9 @@ Go to the main folder where you want the repository cloned
 	git push -u origin main
 
 >Flag notes:
->'commit -m' allows a commit message to be supplies. In this case "Add a-new-file"
->'branch -M' renames the current branch (which is typically 'master') to main
->'push -u' adds an upstream tracking reference. Allows use of git pull without arguments
+>'commit -m' allows a commit message to be supplies. In this case "Add a-new-file".
+>'branch -M' renames the current branch (which is typically 'master') to main.
+>'push -u' adds an upstream tracking reference, and allows use of git pull without arguments.
 
 ## Add git to an existing project and commit to remote (Github)
 
