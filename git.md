@@ -86,6 +86,11 @@ order as the previous command. Your key is the letters and numbers after "rsa409
 
 ## Clone a remote repository and commit a file
 
+>Please note that as of 1st October 2020 GitHub started using 'main' instead
+>of 'master' as the primary/default branch name. I have therefore followed this
+>convention below. However, if you want to use 'master' just replace 'main' with
+>'master' in what follows
+
 Go to the main folder where you want the repository cloned
 
 	git clone git@github.com:thetestspecimen/linux-notes.git
@@ -93,7 +98,13 @@ Go to the main folder where you want the repository cloned
 	touch a-new-file.md
 	git add a-new-file.md
 	git commit -m "Add a-new-file"
-	git push -u origin master
+	git branch -M main
+	git push -u origin main
+
+>Flag notes:
+>'commit -m' allows a commit message to be supplies. In this case "Add a-new-file"
+>'branch -M' renames the current branch (which is typically 'master') to main
+>'push -u' adds an upstream tracking reference. Allows use of git pull without arguments
 
 ## Add git to an existing project and commit to remote (Github)
 
@@ -102,7 +113,8 @@ Go to the main folder where you want the repository cloned
 	git remote add origin git@github.com:thetestspecimen/linux-notes.git
 	git add .
 	git commit -m "Initial commit"
-	git push -u origin master
+	git branch -M main
+	git push -u origin main
 
 ## Change remote origin for project
 
@@ -114,7 +126,7 @@ Go to the main folder where you want the repository cloned
 
 ## Update a local repository from remote
 
-	git pull origin master
+	git pull origin main
 
 ## Signed commits
 
@@ -215,15 +227,15 @@ Otherwise they may request updates.
 
 ### Cleaning up after a successful pull request
 
-To keep up to date with original repository (after branch has been added to original repository master branch):
+To keep up to date with original repository (after branch has been added to original repository main branch):
 
-1) ```git checkout master```
+1) ```git checkout main```
 2) ```git remote add upstream https://github.com/thetestspecimen/linux-notes.git```
 3) ```git fetch upstream```
-4) ```git rebase upstream/master``` (this pulls in any changes from upstream)
-5) ```git push origin master```
+4) ```git rebase upstream/main``` (this pulls in any changes from upstream)
+5) ```git push origin main```
 
-Now we need to remove branch we created earlier as it is not contained in master:
+Now we need to remove branch we created earlier as it is not contained in main:
 
 1) ```git branch -d new-notes```
 2) ```git push origin --delete new-notes```
