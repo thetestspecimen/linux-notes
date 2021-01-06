@@ -39,9 +39,14 @@ Please see the list below for the topics available:
 5. [Image Manipulation](images.md) - batch image conversion and resizing
 	- batch image format conversion 
 	- batch image resizing
-6. [Deep Learning](deeplearning.md) - Setup deep learning with Fedora and AMD GPU
-7. [Roundcube](roundcube.md) - Change skin logos of roundcube
-8. [Reference Websites](websites.md) - websites used to create this repo
+6. [Video Manipulation](videos.md) - video conversion and details
+	- view video file information
+	- OpenShot profiles
+	- HEVC vs H.264
+	- Using your graphics card
+7. [Deep Learning](deeplearning.md) - Setup deep learning with Fedora and AMD GPU
+8. [Roundcube](roundcube.md) - Change skin logos of roundcube
+9. [Reference Websites](websites.md) - websites used to create this repo
 	- command list
 	- sign other people gpg keys
 	- change luks encryption password
