@@ -41,14 +41,14 @@ The most commonly used format is H.264 (.mp4). This is a great format to use and
 HEVC is a more modern format still output as ".mp4". It uses an improved algorithm to allow equivalent quality at a
 lower bitrate. What this means is you can get smaller file sizes without loss of quality, when compared to H.264.
 
-As a general rules you can use 50-75% of the bitrate to produce an equivalent quality HEVC file.
+As a general rule you can use 50-75% of the bitrate to produce an equivalent quality HEVC file.
 
 HEVC also has the advantage of 10-bit rather than 8-bit in H.264 (although H.264 can use 10-bit it is not widely supported).
 
 The long and short is:
 
-	- use HEVC when you can, as at the same bitrate it is superior to H.264
-	- if you need wide compatibility use H.264  
+- use HEVC when you can, as at the same bitrate it is superior to H.264
+- if you need wide compatibility use H.264  
 
 One downside of HEVC is that due to the improved algorithm it takes longer to encode the file.
 
@@ -61,9 +61,9 @@ uses the CPU or a GPU, making it easier to ensure you pick the correct one.
 
 Graphics card profiles are labelled bright green to make it more obvious:
 
-	- VA-API - this stands for Video Acceleration API, this is what I use with my AMD GPU
-	- NCENC - Nvidia video encoding
-	- QSV - Intel Quick Video Sync
+- VA-API - this stands for Video Acceleration API, this is what I use with my AMD GPU
+- NCENC - Nvidia video encoding
+- QSV - Intel Quick Video Sync
 
 If you want to double check that your AMD GPU is being used, then you can display the graphics card usage using radeontop:
 
