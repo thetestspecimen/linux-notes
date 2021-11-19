@@ -10,8 +10,10 @@ to set them for a specific repository
 
 ### Minimal global settings
 
-	git config --global user.name "your-username"
-	git config --global user.email "your@email.com"
+```bash
+git config --global user.name "your-username"
+git config --global user.email "your@email.com"
+```
 
 ### Set git editor
 
@@ -23,15 +25,21 @@ another text editor then you can change it with the following examples.
 
 For nano:
 
-	git config --global core.editor "nano"
+```bash
+git config --global core.editor "nano"
+```
 
 For Sublime text:
 
-	git config --global core.editor "subl --wait"
+```bash
+git config --global core.editor "subl --wait"
+```
 
 For VS Code:
 
-	git config --global core.editor "code --wait"
+```bash
+git config --global core.editor "code --wait"
+```
 
 The --wait for Sublime and VS Code is important as it allows you to type text and will wait for save/close event.
 
@@ -41,8 +49,10 @@ If you want to sign your commits or tags with you gpg key then you will need
 to tell git which key to use, and you also have the option of specifying it's 
 use on every commit.
 
-	git config --global user.signingkey C88001C355A25170
-	git config --global commit.gpgsign true
+```bash
+git config --global user.signingkey C88001C355A25170
+git config --global commit.gpgsign true
+```
 
 Please change the key above to your own.
 
@@ -52,18 +62,24 @@ Please change the key above to your own.
 
 If you have setup the yubikey to link to URL with your public key then you can run:
 
-	gpg --card-edit
+```bash
+gpg --card-edit
+```
 
 this will open a gpg prompt where you can fetch the public key
 
-	gpg>
-	gpg>fetch
+```bash
+gpg>
+gpg>fetch
+```
 
 The public key is now imported. 
 
 Alternatively, you can import the public key manually with:
 
-	gpg --import public.asc
+```bash
+gpg --import public.asc
+```
 
 Changing the name of the file to your public key file name.
 
@@ -71,7 +87,9 @@ Changing the name of the file to your public key file name.
 
 You can view the public keys available with:
 
-	gpg -k
+```bash
+gpg -k
+```
 
 This will list the public keys. Find the one for your UID, and note the keys 
 denoted as "sub". The one with a [S] at the end is your signing key. Take note of 
@@ -79,7 +97,9 @@ where it is in the list of sub keys.
 
 Then run:
 
-	gpg --card-status
+```bash
+gpg --card-status
+```
 
 This will list your keys on the card. The sub keys are denoted "ssb" in the same
 order as the previous command. Your key is the letters and numbers after "rsa4096/".
@@ -93,13 +113,15 @@ order as the previous command. Your key is the letters and numbers after "rsa409
 
 Go to the main folder where you want the repository cloned
 
-	git clone git@github.com:thetestspecimen/linux-notes.git
-	cd linux-notes
-	touch a-new-file.md
-	git add a-new-file.md
-	git commit -m "Add a-new-file"
-	git branch -M main
-	git push -u origin main
+```bash
+git clone git@github.com:thetestspecimen/linux-notes.git
+cd linux-notes
+touch a-new-file.md
+git add a-new-file.md
+git commit -m "Add a-new-file"
+git branch -M main
+git push -u origin main
+```
 
 >Flag notes:
 >'commit -m' allows a commit message to be supplies. In this case "Add a-new-file".
@@ -108,43 +130,75 @@ Go to the main folder where you want the repository cloned
 
 ## Add git to an existing project and commit to remote (Github)
 
-	cd existing_folder
-	git init
-	git remote add origin git@github.com:thetestspecimen/linux-notes.git
-	git add .
-	git commit -m "Initial commit"
-	git branch -M main
-	git push -u origin main
+```bash
+cd existing_folder
+git init
+git remote add origin git@github.com:thetestspecimen/linux-notes.git
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git push -u origin main
+```
 
 ## Change remote origin for project
 
-	cd existing_repo
-	git remote rename origin old-origin
-	git remote add origin git@github.com:thetestspecimen/linux-notes.git
-	git push -u origin --all
-	git push -u origin --tags
+```bash
+cd existing_repo
+git remote rename origin old-origin
+git remote add origin git@github.com:thetestspecimen/linux-notes.git
+git push -u origin --all
+git push -u origin --tags
+```
 
 ## Update a local repository from remote
 
-	git pull origin main
+```bash
+git pull origin main
+```
+
+## Update branch from main
+
+```bash
+git checkout main
+git pull
+git checkout target_feature_branch
+git merge main
+git push -u origin target_feature_branch
+```
+## Merge branch into main
+
+```bash
+git checkout main
+git pull origin main
+git merge target_feature_branch
+git push -u origin main
+git branch -d target_feature_branch
+git push origin :target_feature_branch
+```
 
 ## Signed commits
 
 If you wish to sign a commit then you need to use the -S (Note: the "S" is capitalised!)
 
-	git commit -S -m "First commit"
+```bash
+git commit -S -m "First commit"
+```
 
 ### The "-a" command
 
 If you add "-a"  to the commit command it will include any updated / deleted / changed files that were committed previously, automatically.
 
-	git commit -a -S -m "First commit"
+```bash
+git commit -a -S -m "First commit"
+```
 
 ### Check if the commit was signed
 
 After the commit is made it is possible to check if it was successful with the following command:
 
-	git log --show-signature -1
+```bash
+git log --show-signature -1
+```
 
 ## Longer commits
 
@@ -155,7 +209,9 @@ To acheive this you need to do the commit step in a slightly different way.
 
 Basically, you ommit the "-m" in the commit command like this:
 
-	git commit -a -S
+```bash
+git commit -a -S
+```
 
 Obviously, you could omit the "-a -S" if you like.
 
@@ -194,10 +250,11 @@ can also use more descriptive explanations.
 
 For example:
 
-	The error() and exception() methods are never called. Delete them.
+```bash
+The error() and exception() methods are never called. Delete them.
 
-	Global variables 'oneTime' and 'twoTime' can be made local. Get rid of
-	those variables, and replace with local variables.
+Global variables 'oneTime' and 'twoTime' can be made local. Get rid of those variables, and replace with local variables.
+```
 
 Always wrap the body text at as close to 72 characters as you can.
 
