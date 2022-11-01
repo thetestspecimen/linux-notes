@@ -59,3 +59,5 @@ If you spot anything that I have written is wrong, or could be done better, then
 ## License
 
 The content of this project is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International license](LICENSE.md)
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Z8Z7G2C89)
