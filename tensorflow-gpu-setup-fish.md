@@ -1,6 +1,6 @@
 # How to setup a Conda environment in fish shell that uses a NVIDIA GPU
 
-As I primarily use fish shell rather than bash I have thought it might be useful to detail how to setup a Conda environment that can utilise a NVIDIA GPU from within fish shell as all instructions tend to be for bash.
+As I primarily use fish shell rather than bash, I thought it might be useful to detail how to setup a Conda environment that can utilise a NVIDIA GPU from within fish shell, as all instructions tend to be for bash.
 
 The general guidance that the following information is taken from can be found [here](https://www.tensorflow.org/install/pip#step-by-step_instructions), which details how to do the same thing for bash terminal.
 
@@ -140,7 +140,7 @@ Verify that TensorFlow is installed:
 python3 -c "import tensorflow as tf; print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
 ```
 
-If the last line is as like the following then it worked:
+If the last line is like the following then it worked:
 
 ```bash
 tf.Tensor(-100.2298, shape=(), dtype=float32)
