@@ -45,9 +45,10 @@ Please see the list below for the topics available:
 	- OpenShot profiles
 	- HEVC vs H.264
 	- Using your graphics card
-7. [Deep Learning](deeplearning.md) - Setup deep learning with Fedora and AMD GPU
-8. [Roundcube](roundcube.md) - Change skin logos of roundcube
-9. [Reference Websites](websites.md) - websites used to create this repo
+7. [Deep Learning Setup - AMD](deeplearning-setup-amd.md) - Setup deep learning with Fedora and AMD GPU
+8. [Tensorflow GPU conda setup in fish shell](tensorflow-gpu-setup-fish.md) - Setup a conda environment with a NVIDIA GPU in fish shell  
+9. [Roundcube](roundcube.md) - Change skin logos of roundcube
+10. [Reference Websites](websites.md) - websites used to create this repo
 	- command list
 	- sign other people gpg keys
 	- change luks encryption password
