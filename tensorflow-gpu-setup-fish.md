@@ -33,6 +33,49 @@ You may also want to stop conda from automatically activating the base environme
 conda config --set auto_activate_base false
 ```
 
+## Set conda channel and flexible priority
+
+### Conda channel
+
+This sets the conda-forge channel to the highest priority, which should help keep packages up to date:
+
+```bash
+conda config --add channels conda-forge
+```
+
+### Channel priority
+
+As per the documentation for conda:
+
+> As of version 4.6.0, Conda has a strict channel priority feature. Strict channel priority can dramatically speed up conda operations and also reduce package incompatibility problems. We recommend setting channel priority to "strict" when possible.
+>
+> -[conda.io](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html)
+
+In our particular case we cannot set the ```channel_priority ``` as strict. This is because later in this tutorial only flexible channel priority will successfully install and setup  ```cuda-nvcc```. So please set the ```channel_priority``` as follows: 
+
+```bash
+conda config --set channel_priority flexible
+```
+
+Other options are as follows:
+
+```bash
+channel_priority (ChannelPriority)
+
+Accepts values of 'strict', 'flexible', and 'disabled'. The default
+value is 'flexible'. With strict channel priority, packages in lower
+priority channels are not considered if a package with the same name
+appears in a higher priority channel. With flexible channel priority,
+the solver may reach into lower priority channels to fulfill
+dependencies, rather than raising an unsatisfiable error. With channel
+priority disabled, package version takes precedence, and the
+configured priority of channels is used only to break ties. In
+previous versions of conda, this parameter was configured as either
+True or False. True is now an alias to 'flexible'.
+
+channel_priority: flexible
+```
+
 ## Create a new conda environment
 
 We will create a new environment with the name ```tf``` using Python version 3.11:
@@ -108,13 +151,14 @@ echo 'set CUDNN_PATH (dirname (python -c "import nvidia.cudnn;print(nvidia.cudnn
 echo 'set -gx LD_LIBRARY_PATH $LD_LIBRARY_PATH $CONDA_PREFIX/lib/ $CUDNN_PATH/lib' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.fish
 ```
 
-Then we run the file:
+Then we  check the file runs automatically:
 
 ```bash
-source $CONDA_PREFIX/etc/conda/activate.d/env_vars.fish
+conda deactivate
+conda activate tf
 ```
 
-**Note:** it is only necessary to run the 'source' command above to execute the file as we have just setup the file, but this will happen automatically when activating the environment in future.
+The above should cause the file ```env_vars.fish``` to be run automatically on activation of the environment. You will know if this is successful if the tests in the "Verify the install" section complete successfully.
 
 ## Install TensorFlow
 
@@ -171,8 +215,6 @@ If you encounter this error then please execute the following (again update vers
 conda install -c nvidia cuda-nvcc=11.3.58
 # set flag
 echo 'set -gx XLA_FLAGS --xla_gpu_cuda_data_dir=$CONDA_PREFIX/lib/' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.fish
-# activate
-source $CONDA_PREFIX/etc/conda/activate.d/env_vars.fish
 # Copy libdevice file to the required path
 mkdir -p $CONDA_PREFIX/lib/nvvm/libdevice
 cp $CONDA_PREFIX/lib/libdevice.10.bc $CONDA_PREFIX/lib/nvvm/libdevice/
@@ -180,7 +222,7 @@ cp $CONDA_PREFIX/lib/libdevice.10.bc $CONDA_PREFIX/lib/nvvm/libdevice/
 
 ## Final steps
 
-Everything is now set. However I would recommend 'rebooting' the conda environment to check everything works as intented:
+Everything is now set. All that is left to do is to 'reboot' the conda environment to run the ```env_vars.fish``` file with the additional parameters for XLA_FLAGS:
 
 ```bash
 conda deactivate
@@ -190,4 +232,13 @@ conda activate tf
 ## Run the code
 
 Now you can run your code and the GPU should be used in tensorflow with no problem, even within things like a Jupyter Notebook or Jupyter Lab.
+
+You can install and launch Jupyter Lab as follows:
+
+```bash
+conda install -c conda-forge jupyterlab
+jupyter-lab
+```
+
+
 
