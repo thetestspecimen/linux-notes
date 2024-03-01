@@ -60,7 +60,7 @@ Please change the key above to your own.
 
 ### Importing the public key (if required)
 
-If you have setup the yubikey to link to URL with your public key then you can run:
+If you have setup the yubikey to link to a URL with your public key, then you can run:
 
 ```bash
 gpg --card-edit
@@ -261,26 +261,51 @@ Always wrap the body text at as close to 72 characters as you can.
 
 ## Contributing to GitHub Project
 
-### Contributing
+### Get the repo locally
 
-1. Log into github
-2. Find the github project you want to contribute to
-3. Fork (using the fork button on github) the project to your own github account
-4. Copy the link from the "Clone or Download" button in **MY** github for the project we just cloned
+1. Log into GitHub
+2. Find the GitHub project you want to contribute to
+3. Fork the project to your own github account (using the fork button on GitHub) 
+4. Copy the link from the "Clone or Download" button in **YOUR** GitHub for the project we just cloned
 5. cd into a selected folder on your computer (in my case GitHub in the home directory)
-6. Clone the remote in the commandline: ```git clone https://github.com/thetestspecimen/linux-notes.git```
+6. Clone the origin in the commandline: ```git clone https://github.com/your-user-name/linux-notes.git```
 7. Move into the new project directory: ```cd linux-notes```
-8. create new branch: ```git checkout -b new-notes```
-9. Make changes to files that you need to change
-10. use ```git status``` to see a summary of what has changed
-11. add changes to git: ```git add .```
-12. commit the changes: ```git commit -m "What has changed message"``` (always write commits in present tense)
-13. push changes to github: ```git push origin new-notes``` (i.e. the branch name)
-14. Now you can submit using compare and pull request on github
-15. Add necessary details and click "Create pull request"
+8. Add the upstream (i.e. the original project, not your copy) ```git remote add upstream https://github.com/thetestspecimen/linux-notes.git```
+9. Get any upstream changes ```git fetch upstream```
+10. Apply any upstream changes ```git merge upstream/main```
+11. Push upstream changes to origin ```git push origin main```
+
+### Create a new branch to work on 
+
+1. create new branch: ```git checkout -b new-notes```
+2. Make changes to files that you need to change
+3. use ```git status``` to see a summary of what has changed
+4. add changes to git: ```git add path/to/file-to-be-added-or-changed.py```
+5. commit the changes: ```git commit -m "What has changed message"``` (always write commits in present tense)
+6. push changes to github: ```git push origin new-notes``` (i.e. the branch name)
+
+
+### Create pull request
+
+If you are happy all is up to date (see next section). Then submit the pull request.
+
+1. Submit using compare and pull request on github
+8. Add necessary details and click "Create pull request"
 
 This will then send a pull request to to the original developer, and if they wish they can merge your branch.
 Otherwise they may request updates.
+
+### Updating your branch from main
+
+It is a good idea to keep the branch up to speed with main so there are no conflicts
+
+1. Change to the feature branch ```git checkout new-notes```
+2. Pull in the changes from remote ```git fetch upstream```
+3. Merge the changes ```git merge upstream/main```
+4. If conflicts occur [resolve them](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line)
+5. Once changes done, add the new files ```git add -u```
+6. Commit changes ```git commit```
+7. Then push changes ```git push origin new-notes``` 
 
 ### Cleaning up after a successful pull request
 
@@ -301,3 +326,5 @@ Now we need to remove branch we created earlier as it is not contained in main:
 
 https://codeburst.io/a-step-by-step-guide-to-making-your-first-github-contribution-5302260a2940
 https://gist.github.com/MarcDiethelm/7303312
+
+https://pandas.pydata.org/pandas-docs/stable/development/contributing.html
