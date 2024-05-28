@@ -1,22 +1,26 @@
 # Linux Notes
 
-This repository is intended to be for logging useful information, mainly in relation to the administration of a Fedora workstation and an Ubuntu web server.
+This repository is intended to be for logging useful information in relation to Linux (desktop and server).
 
 Should you find the information provided here useful, please feel free to use it as your own reference.
 
 ## Current distribution versions
 
-These are the current versions of operating system this repository is relevant to:
+These are the current active systems that I utilise:
 
-- Manjaro
-- Fedora Workstation 33
-- Ubuntu Server 20.04.1 LTS
+- Arch (Desktop)
+- Ubuntu 22.04.4 LTS (Server)
+
+You may find some info in this repository for previously used distributions:
+
+* Manjaro
+* Fedora Workstation
 
 ## Index
 
 This repository contains various files each of which cover a different topic.
 
-Please see the list below for the topics available:
+Please see the list below for the topics available and what they relate to:
 
 1. [General](general.md) - general useful commands that do not warrant their own section
 	- file secure delete
@@ -55,7 +59,7 @@ Please see the list below for the topics available:
 
 ## Contributions
 
-If you spot anything that I have written is wrong, or could be done better, then please don't hesitate to get in contact or put in a pull request.
+If you spot anything that I have written is wrong, or could be improved, then please don't hesitate to get in contact, or put in a bug report / pull request.
 
 ## License
 
