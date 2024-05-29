@@ -22,40 +22,47 @@ This repository contains various files each of which cover a different topic.
 
 Please see the list below for the topics available and what they relate to:
 
-1. [General](general.md) - general useful commands that do not warrant their own section
+1. [Arch Linux Installation Guide](arch-install.md) - Step-by-step install guide with features including:
+	- Encrypted root, swapfile and boot
+	- A btrfs filesystem with compression and snapshot capabilities 
+	- Gnome desktop using Wayland
+	- NVIDIA proprietary drivers
+	- Snapper snapshots including GUI
+2. [General](general.md) - general useful commands that do not warrant their own section
 	- file secure delete
 	- fix crashing kernel
 	- stress test cpu
 	- sensor viewer (cpu temp etc.)
-2. [Git](git.md) - basic interactions with git including:
+3. [Git](git.md) - basic interactions with git including:
 	- global configuration
 	- basic project starts (create local, pull remote etc.)
 	- commit signing with GPG and Yubikey
 	- correct commit styling and conventions
 	- contributing to an open source project
-3. [Yubikey](yubikey.md) - useful commands for using a Yubikey
+4. [Yubikey](yubikey.md) - useful commands for using a Yubikey
 	- ssh into remote server
 	- changing Yubikeys
-4. [File and Directory Permissions](file-dir-permissions.md) - useful commands to change file and folder permissions
+5. [File and Directory Permissions](file-dir-permissions.md) - useful commands to change file and folder permissions
 	- permissions definition
 	- basic file and folder permission changes
 	- recursive file and folder permission changes
 	- setting default file and folder permissions
-5. [Image Manipulation](images.md) - batch image conversion and resizing
+6. [Image Manipulation](images.md) - batch image conversion and resizing
 	- batch image format conversion 
 	- batch image resizing
-6. [Video Manipulation](videos.md) - video conversion and details
+7. [Video Manipulation](videos.md) - video conversion and details
 	- view video file information
 	- OpenShot profiles
 	- HEVC vs H.264
 	- Using your graphics card
-7. [Deep Learning Setup - AMD](deeplearning-setup-amd.md) - Setup deep learning with Fedora and AMD GPU
-8. [Tensorflow GPU conda setup in fish shell](tensorflow-gpu-setup-fish.md) - Setup a conda environment with a NVIDIA GPU in fish shell  
-9. [Roundcube](roundcube.md) - Change skin logos of roundcube
-10. [Reference Websites](websites.md) - websites used to create this repo
+8. [Deep Learning Setup - AMD](deeplearning-setup-amd.md) - Setup deep learning with Fedora and AMD GPU
+9. [Tensorflow GPU conda setup in fish shell](tensorflow-gpu-setup-fish.md) - Setup a conda environment with a NVIDIA GPU in fish shell  
+10. [Roundcube](roundcube.md) - Change skin logos of roundcube
+11. [Reference Websites](websites.md) - websites used to create this repo
 	- command list
 	- sign other people gpg keys
 	- change luks encryption password
+	- Arch install
 
 ## Contributions
 
