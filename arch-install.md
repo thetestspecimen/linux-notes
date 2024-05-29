@@ -471,6 +471,8 @@ locale-gen
 
 ## Set keyboard layout and terminal font
 
+Change "uk" to whatever your keyboard layout is.
+
 ```bash
 echo "KEYMAP=uk" >> /etc/vconsole.conf
 echo "FONT=ter-v28n" >> /etc/vconsole.conf 
@@ -478,9 +480,9 @@ echo "FONT=ter-v28n" >> /etc/vconsole.conf
 
 Other font sizes if 28 is too small or large for you:
 
-ter-v20n
-ter-v24n
-ter-v32n
+- ter-v20n
+- ter-v24n
+- ter-v32n
 
 (also change the 'n' to 'b' if you want 'bold' rather than 'normal')
 
