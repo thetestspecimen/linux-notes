@@ -245,8 +245,7 @@ mkfs.vfat -F 32 /dev/sdf1
 
 ```bash
 # You will be asked to create a password. Make sure it is a strong password
-cryptsetup --type luks1 -c aes-xts-plain64 -h sha512 -i 5000 -s 512 
-luksFormat /dev/sdf2
+cryptsetup --type luks1 -c aes-xts-plain64 -h sha512 -i 5000 -s 512 luksFormat /dev/sdf2
 # Now open the new encrypted partition. You will be prompted to enter the password you created in the previous step.
 cryptsetup luksOpen /dev/sdf2 cryptroot
 ```
