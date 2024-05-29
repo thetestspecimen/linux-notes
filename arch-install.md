@@ -1,4 +1,4 @@
-# Introduction
+# Encrypted Arch Linux Installation Guide
 
 This guide provides information on how to setup an Arch Linux installation from scratch with the following features:
 
