@@ -605,8 +605,10 @@ GRUB_PRELOAD_MODULES="luks"
 # This exists, but needs turning on (i.e. remove the initial #)
 GRUB_ENABLE_CRYPTODISK=y
 ```
-Install grub in ESP:
+Install grub:
+
 **Note:** the ```--bootloader-id``` can be whatever you want. This is the name that will be shown in bios/grub so you can identify the install.
+
 ```bash
 grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=Arch
 ```
