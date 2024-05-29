@@ -338,7 +338,7 @@ The two lines below are sufficient to create a swapfile with all the necessary c
 **Note:** If you want to use hybernation you must assign a swap file that is at least as large as your RAM.
 
 ```bash
-# create swapfile
+# create swapfile - change the 62g to your required swap filesize (62g = 62 Gigabytes)
 btrfs filesystem mkswapfile --size 62g --uuid clear /mnt/swap/swapfile
 # activate swapfile
 swapon /mnt/swap/swapfile
